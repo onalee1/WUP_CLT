@@ -42,8 +42,11 @@ p+ geom_vline(aes(xintercept=mean(kkardashtemp)),
 print(paste('mean = ', mean(my1000$kkardashtemp),' sd = ',sd(my1000$kkardashtemp)))
 ```
 
+  I believe with the numb being 9 and the sd being 42.00, I expect our new sd to be around 14.00. You can expect the new sd to be one third of the original.
+
+
 ```{r}
-numb=2
+numb=9
 Hdata = Homers_data[sample(1:1000, size=numb*1000, replace=T),"kkardashtemp"]
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
 x.avg <- apply(mdata,1,mean)
@@ -59,12 +62,14 @@ p
 print(paste('mean = ', mean(my1000$k2),' sd = ',sd(my1000$k2)))
 
 ```
+I believe with the numb being 9 and the original sd being 13.73, I expect the new sd to be 4.577. You can expect the new sd to be one third of the original.
+
 ## We expect the sample mean to be close to population and the standev to get smaller by the ratio of one to the sample size. In this case 1/sqrt(2)
 
 ### There are 3 peaks in the density plot. You pick two people you can get MM,MF.FM,or FF. these are all equally likey so the little peak on left is all the FF's while the little peak on the right is all the MM's so the big one in the middle is both the MF and FM in the same bag so-to-speak.  
 
 ```{r}
-numb = 4
+numb = 9
 Hdata = Homers_data[sample(1:1000,size=numb*1000, replace=T),"kkardashtemp"]
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
 x.avg <- apply(mdata,1,mean)
@@ -87,3 +92,5 @@ print(paste('mean = ', mean(my1000$k4),' sd = ',sd(my1000$k4)))
 ### In this case the stdev was cut in half because the sample size was four. This is what the central limit theorem says. There are also 5 peaks. They go from FFFF,to FFFM, to FFMM to FMMM and finally MMMM.
 
 # Now finish by adding blocks with numb being 9, then 16, 25, and 36. be sure to mention how the standard deviation progresses as the sample size changes,
+
+  Unlike before the graph was more varied, this graph with our new standard deviation of about 14 with the numb 9 is more blended with smaller peaks and than the peaks we used to see.
