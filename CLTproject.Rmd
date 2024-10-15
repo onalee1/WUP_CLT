@@ -50,19 +50,19 @@ numb=9
 Hdata = Homers_data[sample(1:1000, size=numb*1000, replace=T),"kkardashtemp"]
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
 x.avg <- apply(mdata,1,mean)
-my1000$k2 = x.avg
+my1000$k9 = x.avg
 
-p <- ggplot(my1000, aes(x=k2)) + 
+p <- ggplot(my1000, aes(x=k9)) + 
   geom_density() 
 p
 
 # Add mean line
-  geom_vline(aes(xintercept=mean(k2)),
+  geom_vline(aes(xintercept=mean(k9)),
             color="blue", linetype="dashed", size=1)
-print(paste('mean = ', mean(my1000$k2),' sd = ',sd(my1000$k2)))
+print(paste('mean = ', mean(my1000$k9),' sd = ',sd(my1000$k9)))
 
 ```
-I believe with the numb being 9 and the original sd being 13.73, I expect the new sd to be 4.577. You can expect the new sd to be one third of the original.
+I believe with the numb being 9 and the original sd being 13.45, I expect the new sd to be 4.483. You can expect the new sd to be one third of the original.
 
 ## We expect the sample mean to be close to population and the standev to get smaller by the ratio of one to the sample size. In this case 1/sqrt(2)
 
@@ -73,19 +73,19 @@ numb = 9
 Hdata = Homers_data[sample(1:1000,size=numb*1000, replace=T),"kkardashtemp"]
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
 x.avg <- apply(mdata,1,mean)
-my1000$k4 = x.avg
+my1000$k9 = x.avg
 
 
-p <- ggplot(my1000, aes(x=k4),col=sex) + 
+p <- ggplot(my1000, aes(x=k9),col=sex) + 
   geom_density() +
 
 # Add mean line
- geom_vline(aes(xintercept=mean(k4)),
+ geom_vline(aes(xintercept=mean(k9)),
             color="blue", linetype="dashed", size=1)
-p + ggtitle("n = 4") +
+p + ggtitle("n = 9") +
   xlab("temperature") + ylab(" density")
 
-print(paste('mean = ', mean(my1000$k4),' sd = ',sd(my1000$k4)))
+print(paste('mean = ', mean(my1000$k9),' sd = ',sd(my1000$k9)))
 
 ```
 
