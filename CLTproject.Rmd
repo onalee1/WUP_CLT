@@ -44,24 +44,24 @@ print(paste('mean = ', mean(my1000$kkardashtemp),' sd = ',sd(my1000$kkardashtemp
 
 
 ```{r}
-numb=25
+numb=36
 Hdata = Homers_data[sample(1:1000, size=numb*1000, replace=T),"kkardashtemp"]
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
 x.avg <- apply(mdata,1,mean)
-my1000$k25 = x.avg
+my1000$k36 = x.avg
 
-p <- ggplot(my1000, aes(x=k25)) + 
+p <- ggplot(my1000, aes(x=k36)) + 
   geom_density() 
 p
 
 # Add mean line
-  geom_vline(aes(xintercept=mean(k25)),
+  geom_vline(aes(xintercept=mean(k36)),
             color="blue", linetype="dashed", size=1)
-print(paste('mean = ', mean(my1000$k25),' sd = ',sd(my1000$k25)))
+print(paste('mean = ', mean(my1000$k36),' sd = ',sd(my1000$k36)))
 
 ```
 
-    I believe with the numb being 25 and the sd being 8.479, I expect our new sd to be around 2.826. You can expect the new sd to be one third of the original.
+    I believe with the numb being 36 and the sd being 6.730, I expect our new sd to be around 2.243. You can expect the new sd to be one third of the original.
 
   
 ## We expect the sample mean to be close to population and the standev to get smaller by the ratio of one to the sample size. In this case 1/sqrt(2)
@@ -70,30 +70,30 @@ print(paste('mean = ', mean(my1000$k25),' sd = ',sd(my1000$k25)))
 
 
 ```{r}
-numb = 25
+numb = 36
 Hdata = Homers_data[sample(1:1000,size=numb*1000, replace=T),"kkardashtemp"]
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
 x.avg <- apply(mdata,1,mean)
-my1000$k25 = x.avg
+my1000$k36 = x.avg
 
 
-p <- ggplot(my1000, aes(x=k25),col=sex) + 
+p <- ggplot(my1000, aes(x=k36),col=sex) + 
   geom_density() +
 
 # Add mean line
- geom_vline(aes(xintercept=mean(k25)),
+ geom_vline(aes(xintercept=mean(k36)),
             color="blue", linetype="dashed", size=1)
 p + ggtitle("n = 25") +
   xlab("temperature") + ylab(" density")
 
-print(paste('mean = ', mean(my1000$k25),' sd = ',sd(my1000$k25)))
+print(paste('mean = ', mean(my1000$k36),' sd = ',sd(my1000$k36)))
 
 ```
 
-  I believe with the numb being 25 and the original sd being 8.307, I expect the new sd to be 2.769. You can expect the new sd to be one third of the original.
+  I believe with the numb being 36 and the original sd being 6.973, I expect the new sd to be 2.324. You can expect the new sd to be one third of the original.
 
 ### In this case the stdev was cut in half because the sample size was four. This is what the central limit theorem says. There are also 5 peaks. They go from FFFF,to FFFM, to FFMM to FMMM and finally MMMM.
 
 # Now finish by adding blocks with numb being 9, then 16, 25, and 36. be sure to mention how the standard deviation progresses as the sample size changes,
 
-  Unlike before the graph was more varied, this graph with our new standard deviation of about 8 with the numb 25 started off smoother, and the standard deviation seems to be lowering as we continue.. The mean is about 49.57, similar to the other numbers.
+  Unlike before the graph was more varied, this graph with our new standard deviation of about 7 with the numb 36, showing that the grahs have been smoother with each increase in numb, and the standard devuation have become smaller and smaller. The mean is about 49.58, so we can observe that the mean has stayed the same with each numb.
