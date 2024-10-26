@@ -94,4 +94,4 @@ print(paste('mean = ', mean(my1000$k9),' sd = ',sd(my1000$k9)))
 
 # Now finish by adding blocks with numb being 9, then 16, 25, and 36. be sure to mention how the standard deviation progresses as the sample size changes,
 
-  Unlike before the graph was more varied, this graph with our new standard deviation of about 14 with the numb 9 is more blended with smaller peaks and than the peaks we used to see.
+  Unlike before the graph was more varied, this graph with our new standard deviation of about 14 with the numb 9 is more blended with smaller peaks and than the peaks we used to see. The mean is about 49.37.
